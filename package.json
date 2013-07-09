@@ -27,6 +27,7 @@
      "hubot":         "2.5.5"
     ,"hubot-scripts": "2.4.6"
     ,"hubot-xmpp":   ">= 0.0.1"
+    ,"zombie": ">= 0.0.0"
   },
 
   "engines": {
