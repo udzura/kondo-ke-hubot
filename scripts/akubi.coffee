@@ -5,7 +5,8 @@
 #   元気？ - 元気かどうか返事する
 # util = require('util')
 
-chooseReply = (main, sub, threshold=0.9) ->
+chooseReply = (main, sub, threshold) ->
+  threshold ||= 0.9
   if(Math.random() < threshold) then main else sub
 
 module.exports = (robot) ->
@@ -18,7 +19,7 @@ module.exports = (robot) ->
   robot.respond /おやすみ/i, (msg) ->
     msg.send(chooseReply("おやすみなさいわん", "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-prn1/45322_490396367694695_1878585929_n.jpg"))
 
-  robot.respond /仕事/i (msg) ->
+  robot.respond /仕事/i, (msg) ->
     msg.send(chooseReply("仕事するわん", "いいのよ", 0.7))
 
   robot.catchAll (msg) ->
